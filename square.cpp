@@ -11,7 +11,7 @@ struct input_data {
 };
 
 int main(){
-   float a = 0, b = 0, c = 0, x = 0, x1 = 0, x2 = 0, discriminant = 0;
+   float a = 0, b = 0, c = 0;
    printf("Let me help you solve your quadratic equation!\n"
        "To do this, enter its coefficients:\n");
    struct input_data data;
