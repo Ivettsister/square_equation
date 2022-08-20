@@ -2,12 +2,13 @@
 #include <math.h>
 
 int get_data(struct input_data* data);
+int is_correct_input();
 int solve_square(float a, float b, float c);
 int solve_lineal(float b, float c);
 int count_dixr(float a, float b, float c);
 int check_dixr(float D);
 struct input_data {
-      float a, b, c;
+   float a, b, c;
 };
 
 int main(){
@@ -30,11 +31,17 @@ int main(){
 
 int get_data(struct input_data* data) {
    printf("Сoefficient a: ");
-   scanf("%f", &(*data).a);
+   while (scanf("%f", &(*data).a) != 1) {
+      is_correct_input();
+   }
    printf("Сoefficient b: ");
-   scanf("%f", &(*data).b);
+   while (scanf("%f", &(*data).b) != 1) {
+      is_correct_input();
+   }
    printf("Сoefficient c: ");
-   scanf("%f", &(*data).c);
+   while (scanf("%f", &(*data).c) != 1) {
+      is_correct_input();
+   }
    return 0;
 }
 
@@ -112,6 +119,12 @@ int solve_lineal(float b, float c) {
          return 0;
       }
    }
+}
+
+int is_correct_input() {
+   while (getchar() != '\n');
+   printf("Please enter the correct coefficient!\n");
+   return 0;
 }
 
 int count_dixr(float a, float b, float c) {
