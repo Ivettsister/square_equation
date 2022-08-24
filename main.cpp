@@ -197,13 +197,13 @@ int solve_lineal(const struct input_data* input, struct output_data* data) {
 void give_answer(const struct output_data* data) {
    switch (data->info) {
       case 0: printf("Your equation has no solutions!\n");
-      break;
+              break;
       case 1: printf("Your equation has a single root: x = %.2f\n", data->x1);
-      break;
+              break;
       case 2: printf("Your equation has two roots: x1 = %.2f, x2 = %.2f\n", data->x1, data->x2);
-      break;
+              break;
       case 3: printf("Your equation has an infinite number of solutions!\n");
-      break;
+              break;
       default: assert(0 && "Incorrect number of solutions");
    }
 }
