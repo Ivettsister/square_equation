@@ -6,10 +6,17 @@ void clear_stdin() {
    while (getchar() != '\n');
 }
 
-inline int is_equal(const float a, const float b) {
+int is_equal(const float a, const float b) {
+   assert(!isnan(a));
+   assert(!isnan(b));
+
    return compare_difference(a, b, Eps);
 }
 
-inline int compare_difference(const float a, const float b, const double eps) {
+int compare_difference(const float a, const float b, const double eps) {
+   assert(!isnan(a));
+   assert(!isnan(b));
+   assert(!isnan(eps));
+   
    return abs(b - a) < eps;
 }
