@@ -97,13 +97,13 @@ void give_answer(const struct output_data* data) {
 	assert(data != nullptr);
 
 	switch (data->info) {
-      	case 0: printf("Your equation has no solutions!\n");
+      	case ZERO_ROOTS: printf("Your equation has no solutions!\n");
             break;
-      	case 1: printf("Your equation has a single root: x = %.2f\n", data->x1);
+      	case ONE_ROOT: printf("Your equation has a single root: x = %.2f\n", data->x1);
             break;
-      	case 2: printf("Your equation has two roots: x1 = %.2f, x2 = %.2f\n", data->x1, data->x2);
+      	case TWO_ROOTS: printf("Your equation has two roots: x1 = %.2f, x2 = %.2f\n", data->x1, data->x2);
             break;
-      	case 3: printf("Your equation has an infinite number of solutions!\n");
+      	case INF_ROOTS: printf("Your equation has an infinite number of solutions!\n");
             break;
       	default: assert(0 && "Incorrect number of solutions");
     }
